@@ -1,0 +1,21 @@
+<div class="visualizer-container">
+    <div class="control-panel">
+        <button class="back-btn" routerLink="/">⬅Back</button>
+
+        <div class="actions">
+            <input type="number" [(ngModel)]="inputElement" placeholder="Input number..."/>
+            
+            <button class="action-btn push" (click)="onPush()">Push</button>
+            <button class="action-btn pop" (click)="onPop()">Pop</button>
+            <button class="action-btn clear" (click)="onClear()">Clear</button>
+        </div>
+    </div>
+
+    <div class="stack-board">
+        @for (item of visualElements; track $index){
+            <div class="stack-box">
+                {{ item }}
+            </div>
+        }
+    </div>
+</div>
