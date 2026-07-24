@@ -1,12 +1,10 @@
-/* Resetujemy domyślne marginesy przeglądarki */
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #1e1e1e; // Dajemy ciemne tło globalnie, żeby przy przechodzeniu między podstronami nie błyskało na biało
+    background-color: #1e1e1e; 
     font-family: Arial, sans-serif;
 }
 
-/* Dobra praktyka inżynierska: zmieniamy sposób liczenia szerokości dla wszystkich elementów */
 *, *::before, *::after {
     box-sizing: border-box;
 }
