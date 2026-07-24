@@ -1,1 +1,21 @@
-<p>queue works!</p>
+<div class="visualizer-container">
+    <div class="control-panel">
+        <button class="back-btn" routerLink="/">⬅Back</button>
+
+        <div class="actions">
+            <input type="number" [(ngModel)]="inputElement" placeholder="Input number..."/>
+            
+            <button class="action-btn enqueue" (click)="onEnqueue()">Enqueue</button>
+            <button class="action-btn dequeue" (click)="onDequeue()">Dequeue</button>
+            <button class="action-btn clear" (click)="onClear()">Clear</button>
+        </div>
+    </div>
+
+    <div class="queue-board">
+        @for (item of visualElements; track $index){
+            <div class="queue-box">
+                {{ item }}
+            </div>
+        }
+    </div>
+</div>
