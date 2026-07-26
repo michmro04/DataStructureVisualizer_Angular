@@ -1,1 +1,34 @@
-<p>linked-list works!</p>
+<div class="visualizer-container">
+    <div class="control-panel">
+        <button class="back-btn" routerLink="/">⬅Back</button>
+
+        <div class="actions">
+            <input type="number" [(ngModel)]="inputElement" placeholder="Input number..."/>
+            
+            <button class="action-btn add" (click)="onAdd()">Push</button>
+            <button class="action-btn remove" (click)="onRemove()">Pop</button>
+            <button class="action-btn clear" (click)="onClear()">Clear</button>
+        </div>
+    </div>
+
+    <div class="memory-board">
+        @for (slot of memorySlots; track slot) {
+            <div class="memory-slot">
+                <span class="slot-address">0x{{ (4096 + slot * 8).toString(16).toUpperCase() }}</span>
+                    @if(getNodeAtSlot(slot); as node){
+                        <div class="node-box">
+                            <div class="node-value"> Wartość: {{ node.value }} </div>
+                            <div class="node-pointer">
+                                Wskazuje na: 
+                                @if(node.next == null){
+                                    <div class="node-next-address">NULL</div>
+                                }@else{
+                                    <div class="node-next-address">{{ node.next.address}} </div>
+                                }
+                            </div>
+                        </div>
+                    }
+            </div>
+        }            
+    </div>
+</div>

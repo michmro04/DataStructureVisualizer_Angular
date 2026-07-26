@@ -1,6 +1,6 @@
 import { IVisualizableStructure } from "../services/IVisualizableStructure";
 
-class Node {
+export class Node {
     value: number;
     next: Node | null;
     gridIndex: number;
@@ -47,7 +47,7 @@ export class MyLinkedList implements IVisualizableStructure{
         return chosenSlot; 
     }
 
-    addElement(element: number): void {
+    addElement(element: number): void { 
         
         let index: number = this.allocateMemorySlot();
         let hexAddress = '0x' + (this.baseAddress + (index * this.addressOffset)).toString(16).toUpperCase();        const newNode = new Node(element, index, hexAddress);
