@@ -126,21 +126,21 @@
         }
     }
     .node-value {
-        font-size: 35px;
+        font-size: clamp(18px, 3vw, 23px); 
         font-weight: bold;
         color: white;
         margin-bottom: 5px;
     }
 
     .node-pointer {
-        font-size: 25px;
+        font-size: clamp(12px, 2vw, 22px); 
         color: #d1e0ff;
         text-align: center;
         
         .node-next-address {
             font-family: 'Courier New', Courier, monospace;
             font-weight: bold;
-            font-size: 20px;
+            font-size: clamp(10px, 1.5vw, 20px);
             color: #ffa42d; 
             margin-top: 2px;
         }
