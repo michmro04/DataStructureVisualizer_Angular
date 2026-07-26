@@ -87,7 +87,7 @@
         top: 6px;
         left: 8px;
         font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
+        font-size: 18px;
         color: #777;
     }
 }
@@ -105,7 +105,23 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     
     animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    position: relative;
 
+    .delete-node-btn {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.2) rotate(-10deg);
+            filter: brightness(1.2);
+        }
+    }
     .node-value {
         font-size: 35px;
         font-weight: bold;

@@ -41,6 +41,15 @@ export class LinkedListComponent {
     }
   }
 
+  onRemoveByIndex(index: string){
+    try{
+      this.linkedList.removeElementByIndex(index);
+      this.updateView();
+    }catch(error: any){
+      alert(error.message);
+    }
+  }
+
   onClear(){
     this.linkedList.clear();
     this.updateView();

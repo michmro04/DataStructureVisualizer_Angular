@@ -12,11 +12,14 @@
     </div>
 
     <div class="memory-board">
+        
         @for (slot of memorySlots; track slot) {
             <div class="memory-slot">
                 <span class="slot-address">0x{{ (4096 + slot * 8).toString(16).toUpperCase() }}</span>
-                    @if(getNodeAtSlot(slot); as node){
+                    
+                @if(getNodeAtSlot(slot); as node){
                         <div class="node-box">
+                            <button class="delete-node-btn" (click)="onRemoveByIndex(node.address)">🗑️</button>
                             <div class="node-value"> Wartość: {{ node.value }} </div>
                             <div class="node-pointer">
                                 Wskazuje na: 

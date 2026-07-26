@@ -75,6 +75,29 @@ export class MyLinkedList implements IVisualizableStructure{
         }
     }
 
+    removeElementByIndex(targetAddress: string): void {
+        if(this.head === null){
+            throw new Error("Linked List is empty!");
+        }
+        else if ( this.head.address == targetAddress ) {
+            this.occupiedSlots[this.head.gridIndex] = false;
+            this.head = this.head.next;
+            return;
+        }else{
+            let current = this.head;
+            while(current.next != null){
+                if(current.next.address === targetAddress){
+                    let removedNode = current.next;
+                    current.next = removedNode.next;
+                    this.occupiedSlots[removedNode.gridIndex] = false;
+                    return;
+                }
+                current = current.next;
+            }
+            throw new Error(`There is no ${targetAddress} address.`)
+        }
+    }
+
     getElements(): number[] {
         let elements: number[] = [];
         let current = this.head;
